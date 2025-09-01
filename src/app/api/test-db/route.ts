@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { connectDB, getConnectionStatus } from '@/lib/database';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Connect to database
     await connectDB();
@@ -23,12 +23,13 @@ export async function GET(request: NextRequest) {
         timestamp: new Date().toISOString()
       }, { status: 500 });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Database test error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json({
       success: false,
       message: 'Database connection error',
-      error: error.message,
+      error: errorMessage,
       timestamp: new Date().toISOString()
     }, { status: 500 });
   }
