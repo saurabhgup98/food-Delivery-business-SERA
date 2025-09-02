@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'sera-pink': '#ff6b6b',
+        'sera-orange': '#ff8e3c',
+        'sera-yellow': '#ffd93d',
+        'sera-blue': '#4ecdc4',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

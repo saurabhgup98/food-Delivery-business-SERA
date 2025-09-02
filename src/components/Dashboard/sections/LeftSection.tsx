@@ -101,8 +101,8 @@ export default function LeftSection({ activities }: LeftSectionProps) {
         </div>
       </div>
       
-      {/* Activities List - Fixed height, no internal scrolling */}
-      <div className="p-3 space-y-3 flex-1 overflow-y-auto custom-scrollbar bg-gradient-to-br from-dark-700 via-dark-600 to-dark-500 min-h-0 max-h-[calc(100vh-200px)]">
+      {/* Activities List - Responsive height with better mobile support */}
+      <div className="p-3 space-y-3 flex-1 overflow-y-auto custom-scrollbar bg-gradient-to-br from-dark-700 via-dark-600 to-dark-500 min-h-0 max-h-[calc(100vh-300px)] sm:max-h-[calc(100vh-250px)] lg:max-h-[calc(100vh-200px)]">
         {activities.map((activity, index) => (
           <div key={activity.id} className="group relative">
             <div className={`flex items-start space-x-4 p-4 rounded-xl transition-all duration-300 cursor-pointer group ${getCardStyle(activity.type)} hover:scale-[1.02] hover:translate-x-1`}>

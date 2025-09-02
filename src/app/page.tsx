@@ -45,16 +45,16 @@ export default function Home() {
       
       {/* Scrollable Content Area */}
       <div ref={scrollContainerRef} className="h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar">
-        <main className="p-6">
+        <main className="p-3 sm:p-4 md:p-6">
           {/* Enhanced Ultra Compact Dashboard Introduction Section */}
-          <div ref={introRef} className="mb-4">
-            <div className="relative bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-700/85 border border-sera-blue/30 rounded-xl p-3 backdrop-blur-sm shadow-xl shadow-sera-blue/10 overflow-hidden">
+          <div ref={introRef} className="mb-3 sm:mb-4">
+            <div className="relative bg-gradient-to-br from-dark-900/95 via-dark-800/90 to-dark-700/85 border border-sera-blue/30 rounded-xl p-3 backdrop-blur-sm shadow-xl shadow-sera-blue/10 overflow-hidden">
               {/* Animated background pattern */}
               <div className="absolute inset-0 bg-gradient-to-r from-sera-blue/5 via-transparent to-sera-pink/5 animate-pulse"></div>
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-sera-blue/10 to-transparent rounded-full blur-xl"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-sera-pink/10 to-transparent rounded-full blur-xl"></div>
+              <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-sera-blue/10 to-transparent rounded-full blur-xl"></div>
+              <div className="absolute bottom-0 left-0 w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-tr from-sera-pink/10 to-transparent rounded-full blur-xl"></div>
               
-              <div className="relative flex items-center space-x-3">
+              <div className="relative flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
                 {/* Enhanced Icon */}
                 <div className="w-8 h-8 bg-gradient-to-br from-sera-blue/40 to-sera-blue/20 rounded-lg flex items-center justify-center shadow-lg border border-sera-blue/40 backdrop-blur-sm relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-sera-blue/20 to-transparent animate-pulse"></div>
@@ -62,7 +62,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex-1">
-                  <h1 className="text-lg font-bold text-white drop-shadow-sm tracking-wide">
+                  <h1 className="text-base sm:text-lg font-bold text-white drop-shadow-sm tracking-wide">
                     SERA Business Dashboard
                   </h1>
                   <p className="text-gray-400 text-xs tracking-wide">
@@ -70,7 +70,7 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2 sm:space-x-3">
                   {/* Enhanced Online Status */}
                   <div className="flex items-center space-x-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-2 py-1 backdrop-blur-sm">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse shadow-sm shadow-emerald-400/50"></div>
