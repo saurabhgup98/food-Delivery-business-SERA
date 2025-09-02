@@ -1,13 +1,9 @@
 import mongoose from 'mongoose';
 
 let isConnected = false;
+let currentURI = '';
 
 export const connectDB = async (): Promise<void> => {
-  if (isConnected) {
-    console.log('✅ MongoDB already connected');
-    return;
-  }
-
   try {
     const mongoURI = process.env.NODE_ENV === 'production' 
       ? process.env.MONGODB_URI_PROD 
@@ -17,6 +13,20 @@ export const connectDB = async (): Promise<void> => {
       throw new Error('MongoDB URI is not defined in environment variables');
     }
 
+    // If already connected with the same URI, return
+    if (isConnected && currentURI === mongoURI) {
+      console.log('✅ MongoDB already connected');
+      return;
+    }
+
+    // If connected with different URI, disconnect first
+    if (isConnected && currentURI !== mongoURI) {
+      console.log('🔄 Disconnecting from previous connection...');
+      await mongoose.disconnect();
+      isConnected = false;
+    }
+
+    // Connect to database
     const conn = await mongoose.connect(mongoURI, {
       maxPoolSize: 10,
       serverSelectionTimeoutMS: 5000,
@@ -25,6 +35,7 @@ export const connectDB = async (): Promise<void> => {
     });
 
     isConnected = true;
+    currentURI = mongoURI;
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     
     // Handle connection events
@@ -54,6 +65,7 @@ export const disconnectDB = async (): Promise<void> => {
   try {
     await mongoose.disconnect();
     isConnected = false;
+    currentURI = '';
     console.log('✅ MongoDB disconnected');
   } catch (error) {
     console.error('❌ Error disconnecting from MongoDB:', error);
