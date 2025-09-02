@@ -8,9 +8,10 @@ interface AuthModalsProps {
   onClose: () => void;
   mode: 'login' | 'register';
   onModeChange?: (mode: 'login' | 'register') => void;
+  onSuccess?: () => void;
 }
 
-export default function AuthModals({ isOpen, onClose, mode, onModeChange }: AuthModalsProps) {
+export default function AuthModals({ isOpen, onClose, mode, onModeChange, onSuccess }: AuthModalsProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -41,12 +42,19 @@ export default function AuthModals({ isOpen, onClose, mode, onModeChange }: Auth
       return;
     }
     console.log('Form submitted:', formData);
+    if (onSuccess) {
+      onSuccess();
+    }
     onClose();
   };
 
   const handleOAuthLogin = (provider: 'google' | 'facebook') => {
     console.log(`${provider} OAuth login`);
     // Implement OAuth logic here
+    if (onSuccess) {
+      onSuccess();
+    }
+    onClose();
   };
 
   const handleClose = () => {

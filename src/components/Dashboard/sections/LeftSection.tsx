@@ -139,8 +139,8 @@ export default function LeftSection({ activities }: LeftSectionProps) {
             {index < activities.length - 1 && (
               <div className="absolute left-6 top-16 w-0.5 h-8 bg-gradient-to-b from-cyan-400/60 via-emerald-400/40 to-amber-400/30 rounded-full"></div>
             )}
-          </div>
-        ))}
+            </div>
+          ))}
         
         {/* Extra padding to ensure scrollbar visibility */}
         <div className="h-4"></div>
