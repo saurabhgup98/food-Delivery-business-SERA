@@ -2,17 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Dashboard } from '@/components/Dashboard';
-import Header from '@/components/Header/Header';
 import { mockDashboardData } from '@/data/dashboardData';
 
 export default function Home() {
   const [isSticky, setIsSticky] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
-
-  const handleSearch = (query: string) => {
-    alert(`Search query: ${query}`);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +34,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen bg-dark-900 overflow-hidden">      
-      {/* Fixed Header */}
-      <Header onSearch={handleSearch} />
-      
+    <div className="h-[calc(100vh-80px)] overflow-y-auto">      
       {/* Scrollable Content Area */}
-      <div ref={scrollContainerRef} className="h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar">
+      <div ref={scrollContainerRef} className="h-full overflow-y-auto custom-scrollbar">
         <main className="p-3 sm:p-4 md:p-6">
           {/* Enhanced Ultra Compact Dashboard Introduction Section */}
           <div ref={introRef} className="mb-3 sm:mb-4">
@@ -79,7 +71,7 @@ export default function Home() {
                   
                   {/* Enhanced Live Status */}
                   <div className="flex items-center space-x-1 bg-sera-blue/10 border border-sera-blue/30 rounded-full px-2 py-1 backdrop-blur-sm">
-                    <div className="w-1.5 h-1.5 bg-sera-blue rounded-full animate-pulse shadow-sm shadow-sera-blue/50"></div>
+                    <div className="w-3 h-3 bg-sera-blue rounded-full animate-pulse shadow-sm shadow-sera-blue/50"></div>
                     <span className="text-sera-blue text-xs font-medium tracking-wide">Live</span>
                   </div>
                 </div>
