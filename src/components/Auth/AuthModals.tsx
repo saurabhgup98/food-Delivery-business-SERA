@@ -54,7 +54,8 @@ export default function AuthModals({ isOpen, onClose, mode, onModeChange, onSucc
     if (onSuccess) {
       onSuccess();
     }
-    onClose();
+    // Don't close immediately - let the success handler manage the close
+    // onClose();
   };
 
   const handleClose = () => {
