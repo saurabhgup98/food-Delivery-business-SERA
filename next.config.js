@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
+  // Force App Router recognition
+  experimental: {
+    appDir: true,
+  },
   // Ensure proper routing
   trailingSlash: false,
   eslint: {
