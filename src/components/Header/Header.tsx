@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   MenuIcon,
   XIcon
@@ -61,6 +61,24 @@ const Header: React.FC<HeaderProps> = ({
     setAuthMode(mode);
   };
 
+  // Check localStorage on component mount
+  useEffect(() => {
+    const loginStatus = localStorage.getItem('isLoggedIn');
+    console.log('Header mounted, localStorage loginStatus:', loginStatus);
+    if (loginStatus === 'true') {
+      console.log('Setting isLoggedIn to true');
+      setIsLoggedIn(true);
+    } else {
+      console.log('Setting isLoggedIn to false');
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  // Debug effect to log state changes
+  useEffect(() => {
+    console.log('Header isLoggedIn state changed to:', isLoggedIn);
+  }, [isLoggedIn]);
+
   const handleNavClick = (itemName: string) => {
     // Handle different navigation items
     switch (itemName) {
@@ -91,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <>
-      <header className="relative bg-gradient-to-r from-sera-pink via-sera-orange to-sera-pink shadow-2xl sticky top-0 z-40 overflow-hidden">
+      <header className="relative bg-gradient-to-r from-sera-pink via-sera-orange to-sera-pink shadow-2xl sticky top-0 z-[9999]">
         {/* Beautiful background pattern overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5"></div>
         

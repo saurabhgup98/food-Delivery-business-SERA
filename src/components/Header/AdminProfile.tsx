@@ -72,8 +72,11 @@ const AdminProfile: React.FC<AdminProfileProps> = ({
       {/* Dropdown Menu */}
       {isProfileDropdownOpen && (
         <div 
-          className="absolute right-0 mt-3 w-64 bg-dark-800 rounded-xl shadow-2xl border border-dark-600 z-[9999]"
+          className="absolute right-0 top-full mt-3 w-64 bg-dark-800 rounded-xl shadow-2xl border border-dark-600 z-[99999]"
           ref={profileDropdownRef}
+          style={{
+            zIndex: 99999
+          }}
         >
           {/* User Info Header */}
           <div className="p-4 border-b border-dark-600 bg-dark-700 rounded-t-xl">

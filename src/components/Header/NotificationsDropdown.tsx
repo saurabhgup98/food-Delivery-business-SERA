@@ -44,7 +44,12 @@ const NotificationsDropdown: React.FC<NotificationsDropdownProps> = ({
       
       {/* Notifications Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-80 bg-dark-800 rounded-xl shadow-2xl border border-dark-600 z-[9999]">
+        <div 
+          className="absolute right-0 top-full mt-3 w-80 bg-dark-800 rounded-xl shadow-2xl border border-dark-600 z-[99999]"
+          style={{
+            zIndex: 99999
+          }}
+        >
           <div className="p-4 border-b border-dark-600">
             <h3 className="text-white font-semibold">Notifications</h3>
           </div>
