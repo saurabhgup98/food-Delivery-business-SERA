@@ -11,15 +11,5 @@
   },
   "env": {
     "NODE_ENV": "production"
-  },
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/dashboard",
-      "dest": "/dashboard"
-    }
-  ]
+  }
 }
