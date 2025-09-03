@@ -49,8 +49,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Easy Management</h3>
               <p className="text-gray-400">Manage orders, menus, and staff effortlessly</p>
-                </div>
-                
+            </div>
+
             {/* Feature 2 */}
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-sera-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -58,8 +58,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Analytics</h3>
               <p className="text-gray-400">Track performance and growth insights</p>
-                </div>
-                
+            </div>
+
             {/* Feature 3 */}
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-sera-pink/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -67,8 +67,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Payments</h3>
               <p className="text-gray-400">Secure and fast payment processing</p>
-                  </div>
-                  
+            </div>
+
             {/* Feature 4 */}
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-sera-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -76,9 +76,9 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Delivery</h3>
               <p className="text-gray-400">Seamless delivery integration</p>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Admin Access Section */}
@@ -104,8 +104,8 @@ export default function HomePage() {
             >
               Admin Login
             </Link>
-            </div>
           </div>
+        </div>
       </section>
 
       {/* Footer */}
@@ -114,7 +114,7 @@ export default function HomePage() {
           <p className="text-gray-400">
             © 2024 SERA Business. All rights reserved.
           </p>
-          </div>
+        </div>
       </footer>
     </div>
   );
